@@ -21,9 +21,12 @@ const queryClient = new QueryClient({
     },
 })
 
+// Get base path for router (matches vite.config.ts base)
+const basename = import.meta.env.PROD ? '/bixi-dashboard' : '';
+
 createRoot(document.getElementById('root')!).render(
     <StrictMode>
-        <BrowserRouter>
+        <BrowserRouter basename={basename}>
             <QueryClientProvider client={queryClient}>
                 <LanguageProvider>
                     <App />

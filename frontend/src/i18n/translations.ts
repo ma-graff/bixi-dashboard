@@ -21,7 +21,7 @@ export const translations = {
         // About
         about: 'About',
         aboutTitle: 'About Bixi Dashboard',
-        aboutText: 'This dashboard provides real-time visualization of Montreal\'s Bixi bike-sharing system. Data is sourced from the official GBFS feed and refreshes automatically.',
+        aboutText: 'This dashboard provides real-time visualization of Montreal\'s Bixi bike-sharing system. Data is sourced from the official BIXI GBFS feed. Made by Matt Graff, January 2026.',
         close: 'Close',
 
         // Map Legend
@@ -67,25 +67,25 @@ export const translations = {
     },
     fr: {
         // Header
-        title: 'Bixi Dashboard',
-        subtitle: 'Statistiques BIXI en temps réel à Montréal',
+        title: 'Tableau de bord BIXI',
+        subtitle: 'Statistiques BIXI en temps réel – Montréal',
         bikes: 'Vélos',
-        ebikes: 'É-Vélos',
-        docks: 'Bornes',
+        ebikes: 'Vélos électriques',
+        docks: 'Points d\'ancrage',
         stations: 'Stations',
         live: 'En direct',
-        updating: 'Mise à jour...',
-        updated: 'Mis à jour',
-        connecting: 'Connexion...',
+        updating: 'Mise à jour en cours...',
+        updated: 'Dernière mise à jour',
+        connecting: 'Connexion en cours...',
 
         // Navigation
         dashboard: 'Tableau de bord',
-        pastData: 'Historique',
+        pastData: 'Données historiques',
 
         // About
         about: 'À propos',
-        aboutTitle: 'À propos du tableau de bord Bixi',
-        aboutText: 'Ce tableau de bord offre une visualisation en temps réel du système de vélo-partage Bixi de Montréal. Les données proviennent du flux GBFS officiel et se rafraîchissent automatiquement.',
+        aboutTitle: 'À propos du tableau de bord BIXI',
+        aboutText: 'Ce tableau de bord offre une visualisation en temps réel du système de vélopartage BIXI de Montréal. Les données proviennent du flux GBFS officiel de BIXI. Réalisé par Matt Graff, janvier 2026.',
         close: 'Fermer',
 
         // Map Legend
@@ -93,40 +93,40 @@ export const translations = {
         high: 'Élevée',
         medium: 'Moyenne',
         low: 'Faible',
-        empty: 'Vide',
+        empty: 'Aucun vélo',
 
         // Station Popup
-        stationId: 'ID',
-        classic: 'Classique',
+        stationId: 'No',
+        classic: 'Classiques',
         capacity: 'Capacité',
-        installed: 'Installée',
-        notInstalled: 'Non installée',
-        renting: 'Location active',
-        notRenting: 'Pas de location',
-        returning: 'Retours actifs',
-        noReturns: 'Pas de retours',
-        chargingStation: 'Borne de recharge',
-        totalBikes: 'Total vélos',
-        stationCapacity: 'Capacité station',
-        lastReported: 'Dernier rapport',
+        installed: 'En service',
+        notInstalled: 'Hors service',
+        renting: 'Location disponible',
+        notRenting: 'Location non disponible',
+        returning: 'Retours acceptés',
+        noReturns: 'Retours non acceptés',
+        chargingStation: 'Station de recharge',
+        totalBikes: 'Total des vélos',
+        stationCapacity: 'Capacité de la station',
+        lastReported: 'Dernière communication',
         unknown: 'Inconnu',
 
         // Availability Status
-        highAvailability: 'Haute disponibilité',
-        moderate: 'Modérée',
-        lowAvailability: 'Faible disponibilité',
+        highAvailability: 'Disponibilité élevée',
+        moderate: 'Disponibilité moyenne',
+        lowAvailability: 'Disponibilité faible',
 
         // Loading
-        loadingTitle: 'Chargement des stations Bixi',
+        loadingTitle: 'Chargement des stations BIXI',
         loadingText: 'Récupération des données en temps réel de Montréal...',
 
         // Error
         connectionError: 'Erreur de connexion',
-        errorText: 'Impossible de récupérer les données des stations. Assurez-vous que le serveur backend fonctionne sur le port 8000.',
+        errorText: 'Impossible de récupérer les données des stations. Veuillez vous assurer que le serveur est en fonction.',
 
         // Past Data Page
         pastDataTitle: 'Données historiques',
-        comingSoon: 'Bientôt disponible',
+        comingSoon: 'À venir',
         pastDataDescription: 'Les données historiques et les analyses des stations seront disponibles dans une prochaine mise à jour.',
     },
 } as const;

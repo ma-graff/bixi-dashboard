@@ -33,12 +33,7 @@ export default function Header({ stats, lastUpdated, isLoading }: HeaderProps) {
                     {/* Logo */}
                     <Link to="/" className="flex items-center gap-3">
                         <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-red-700 to-red-900 flex items-center justify-center shadow-md shadow-red-900/20">
-                            {/* Heroicons-style bicycle icon */}
-                            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
-                                <circle cx="5.5" cy="17.5" r="3.5" />
-                                <circle cx="18.5" cy="17.5" r="3.5" />
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M5.5 17.5l4-8.5h5l2.5 5.5M15 9l3.5 8.5M9.5 9L12 4h2" />
-                            </svg>
+                            <span className="text-xl">🚲</span>
                         </div>
                         <div>
                             <h1 className="text-lg font-bold text-slate-900 tracking-tight">
