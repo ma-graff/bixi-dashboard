@@ -1,0 +1,110 @@
+/* MapLibre GL CSS - must be first */
+@import 'maplibre-gl/dist/maplibre-gl.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light;
+  color: #1e293b;
+  background-color: #f8fafc;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --color-primary: #991b1b;
+  --color-primary-light: #dc2626;
+  --color-primary-dark: #7f1d1d;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#root {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Custom MapLibre popup styling - Light theme */
+.maplibregl-popup-content {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 12px !important;
+  padding: 0 !important;
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.15), 0 4px 12px -4px rgba(0, 0, 0, 0.1) !important;
+  max-height: 400px !important;
+  overflow-y: auto !important;
+}
+
+.maplibregl-popup-close-button {
+  color: #64748b !important;
+  font-size: 18px !important;
+  padding: 8px 12px !important;
+  right: 2px !important;
+  top: 2px !important;
+  font-weight: 600 !important;
+}
+
+.maplibregl-popup-close-button:hover {
+  color: #991b1b !important;
+  background: transparent !important;
+}
+
+.maplibregl-popup-tip {
+  border-top-color: #ffffff !important;
+}
+
+/* Loading animation */
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Light card style */
+.light-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* Scrollbar styling for popup */
+.maplibregl-popup-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.maplibregl-popup-content::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 3px;
+}
+
+.maplibregl-popup-content::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.maplibregl-popup-content::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
