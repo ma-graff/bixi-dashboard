@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { BrowserRouter } from 'react-router-dom'
 import { LanguageProvider } from './hooks/useLanguage'
+import { SettingsProvider } from './hooks/useSettings'
 import maplibregl from 'maplibre-gl'
 import { Protocol } from 'pmtiles'
 import './index.css'
@@ -28,10 +29,13 @@ createRoot(document.getElementById('root')!).render(
     <StrictMode>
         <BrowserRouter basename={basename}>
             <QueryClientProvider client={queryClient}>
-                <LanguageProvider>
-                    <App />
-                </LanguageProvider>
+                <SettingsProvider>
+                    <LanguageProvider>
+                        <App />
+                    </LanguageProvider>
+                </SettingsProvider>
             </QueryClientProvider>
         </BrowserRouter>
     </StrictMode>,
 )
+

@@ -3,6 +3,7 @@ import type { SystemStats } from '../types/station';
 import { useLanguage } from '../hooks/useLanguage';
 import LanguageSwitcher from './LanguageSwitcher';
 import AboutModal from './AboutModal';
+import SettingsModal from './SettingsModal';
 
 interface HeaderProps {
     stats?: SystemStats;
@@ -32,9 +33,7 @@ export default function Header({ stats, lastUpdated, isLoading }: HeaderProps) {
                 <div className="flex items-center gap-6">
                     {/* Logo */}
                     <Link to="/" className="flex items-center gap-3">
-                        <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-red-700 to-red-900 flex items-center justify-center shadow-md shadow-red-900/20">
-                            <span className="text-xl">🚲</span>
-                        </div>
+                        <span className="text-3xl">🚲</span>
                         <div>
                             <h1 className="text-lg font-bold text-slate-900 tracking-tight">
                                 {t('title')}
@@ -127,6 +126,7 @@ export default function Header({ stats, lastUpdated, isLoading }: HeaderProps) {
                     {/* Controls */}
                     <div className="flex items-center gap-2">
                         <LanguageSwitcher />
+                        <SettingsModal />
                         <AboutModal />
                     </div>
                 </div>

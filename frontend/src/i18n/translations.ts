@@ -24,12 +24,29 @@ export const translations = {
         aboutText: 'This dashboard provides real-time visualization of Montreal\'s Bixi bike-sharing system. Data is sourced from the official BIXI GBFS feed. Made by Matt Graff, January 2026.',
         close: 'Close',
 
+        // Settings
+        settings: 'Settings',
+        settingsTitle: 'Settings',
+        settingsPlaceholder: 'Settings options will be available here in a future update.',
+        basemapLabel: 'Map Style',
+        cyclosmDescription: 'Cycling-focused map showing bike lanes and paths',
+        openfreemapDescription: 'Standard OpenStreetMap style',
+
         // Map Legend
         availability: 'Availability',
         high: 'High',
         medium: 'Medium',
         low: 'Low',
         empty: 'Empty',
+
+        // CycloSM Legend
+        cyclingInfrastructure: 'Cycling Infrastructure',
+        cycleway: 'Bike Path',
+        cycleTrack: 'Cycle Track',
+        cycleLane: 'Cycle Lane',
+        sharedLane: 'Shared Lane',
+        bikeRoute: 'Bike Route',
+        fullLegend: 'Full Legend',
 
         // Station Popup
         stationId: 'ID',
@@ -68,10 +85,10 @@ export const translations = {
     fr: {
         // Header
         title: 'Tableau de bord BIXI',
-        subtitle: 'Statistiques BIXI en temps réel – Montréal',
+        subtitle: 'BIXI Montréal en temps réel',
         bikes: 'Vélos',
-        ebikes: 'Vélos électriques',
-        docks: 'Points d\'ancrage',
+        ebikes: 'É-Vélos',
+        docks: 'Ancrages',
         stations: 'Stations',
         live: 'En direct',
         updating: 'Mise à jour en cours...',
@@ -88,12 +105,29 @@ export const translations = {
         aboutText: 'Ce tableau de bord offre une visualisation en temps réel du système de vélopartage BIXI de Montréal. Les données proviennent du flux GBFS officiel de BIXI. Réalisé par Matt Graff, janvier 2026.',
         close: 'Fermer',
 
+        // Settings
+        settings: 'Réglages',
+        settingsTitle: 'Réglages',
+        settingsPlaceholder: 'Les options de réglages seront disponibles dans une prochaine mise à jour.',
+        basemapLabel: 'Style de carte',
+        cyclosmDescription: 'Carte axée sur le cyclisme avec pistes et voies cyclables',
+        openfreemapDescription: 'Style OpenStreetMap standard',
+
         // Map Legend
         availability: 'Disponibilité',
         high: 'Élevée',
         medium: 'Moyenne',
         low: 'Faible',
         empty: 'Aucun vélo',
+
+        // CycloSM Legend
+        cyclingInfrastructure: 'Infrastructure cyclable',
+        cycleway: 'Piste cyclable',
+        cycleTrack: 'Voie cyclable',
+        cycleLane: 'Bande cyclable',
+        sharedLane: 'Voie partagée',
+        bikeRoute: 'Itinéraire cyclable',
+        fullLegend: 'Légende complète',
 
         // Station Popup
         stationId: 'No',
