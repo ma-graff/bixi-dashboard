@@ -8,10 +8,25 @@ from contextlib import asynccontextmanager
 from datetime import datetime
 from typing import Any
 
-from fastapi import FastAPI
+import os
+
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
 import httpx
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
+from slowapi import Limiter, _rate_limit_exceeded_handler
+from slowapi.util import get_remote_address
+from slowapi.errors import RateLimitExceeded
+
+# Rate limiter - 30 requests per minute per IP
+limiter = Limiter(key_func=get_remote_address)
+
+# Allowed origins for CORS (add your GitHub Pages URL)
+ALLOWED_ORIGINS = os.environ.get(
+    "ALLOWED_ORIGINS",
+    "https://ma-graff.github.io"
+).split(",")
 
 # GBFS v2.2 Endpoints (English)
 GBFS_BASE_URL = "https://gbfs.velobixi.com/gbfs/2-2/en"
@@ -188,18 +203,23 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
-# Enable CORS for frontend
+# Add rate limiter to app
+app.state.limiter = limiter
+app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
+
+# Enable CORS for frontend (restricted to allowed origins)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=ALLOWED_ORIGINS,
     allow_credentials=True,
-    allow_methods=["*"],
+    allow_methods=["GET"],
     allow_headers=["*"],
 )
 
 
 @app.get("/api/v1/stations")
-async def get_stations():
+@limiter.limit("30/minute")
+async def get_stations(request: Request):
     """
     Get all Bixi stations as a GeoJSON FeatureCollection.
     
@@ -217,7 +237,8 @@ async def get_stations():
 
 
 @app.get("/api/v1/health")
-async def health_check():
+@limiter.limit("60/minute")
+async def health_check(request: Request):
     """Health check endpoint."""
     return {
         "status": "healthy",
